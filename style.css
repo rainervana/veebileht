@@ -1,19 +1,49 @@
-body {
-   background-color: rgb(180, 246, 255);
+* { /* tausta värvi vahetumine: https://codepen.io/sachasayan/pen/gOpPRZJ */
+	margin:0;
+	padding:0;
 }
 
+body::before {
+		content:"";
+		position:fixed;
+		z-index:-100;
+		width:100%;
+		height:100%;
+		background-color:#a5fbff;
+		background-image: 
+		radial-gradient(circle farthest-side at top right, transparent, rgb(205, 223, 255)), radial-gradient(ellipse farthest-corner at 0% 100%, transparent, #cdf9ff);
+		animation:bg-change 10s infinite;
+}
+
+@keyframes bg-change {
+	0%, 100% {
+		filter:hue-rotate(0deg);
+	}
+	50% {
+		filter:hue-rotate(-45deg);
+	}
+}
+
+
 h1 {
-   color: rgb(35, 35, 202);
+   padding: 10px 0px 0px 10px;
+   color: rgba(25, 125, 255, 0.521);
    font-family: 'Times New Roman', Times, serif;
    font-size: 40px;
 }
 
 p, li, a {
+   padding: 0px 0px 0px 10px;
    color: rgb(0, 33, 44);
    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    font-size: 20px;
    text-align: left;
    width: 45%;
+}
+
+li {
+   padding: 3px 0px 3px 20px;
+   font-size: 18px;
 }
 
 .ajalugu{
@@ -34,8 +64,20 @@ img {
    height: 45%
 }
 
+#ww{
+   padding: 0px 0px 0px 0px;
+}
+
+br {
+    padding: 3px 0px 3px 20px;
+}
+
+table{
+   margin-left: 10px;
+}
+
 tr {
-  color: darkblue; 
+   color: darkblue; 
 }
 
 td {
